@@ -1,7 +1,5 @@
-# LocalDiscordAIChatBot
-Discord Chat bot powered by your own self hosted LLM and Image Generation.  
-A 7B LLaMA model and stable diffusion (512x512) can confortably fit in a 12GB RTX3060. Using ~9GB of VRAM.
-Disclaimer: I'm not the most experienced coder.
+# oobaboogaDiscordBot
+WIP Description needs updates.
 
 ### Requires API from oobabooga/text-generation-webui for text generation.
 https://github.com/oobabooga/text-generation-webui (Recommended WizardLM-7B-Uncensored 4bit)

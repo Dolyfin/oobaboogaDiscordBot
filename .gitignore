@@ -1,0 +1,12 @@
+.env
+configs.json
+*.bak
+*.temp
+filter.txt
+temp
+temp/
+temp/*
+.idea
+persona/*
+!persona/example.json
+*.exe

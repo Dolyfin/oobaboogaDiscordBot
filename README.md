@@ -1,2 +1,4 @@
 # oobaboogaDiscordBot
-# WIP Description needs updates. They are all for the previous project: https://github.com/Dolyfin/LocalDiscordAIChatBot
+# WIP Description needs updates. This is a modified version from a previous project: https://github.com/Dolyfin/LocalDiscordAIChatBot
+
+Uses API from oobabooga and AllTalk extension for speech.

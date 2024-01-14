@@ -1,5 +1,6 @@
 # oobaboogaDiscordBot
-WIP Description needs updates.
+# WIP Description needs updates. They are all for the previous project: https://github.com/Dolyfin/LocalDiscordAIChatBot
+
 
 ### Requires API from oobabooga/text-generation-webui for text generation.
 https://github.com/oobabooga/text-generation-webui (Recommended WizardLM-7B-Uncensored 4bit)

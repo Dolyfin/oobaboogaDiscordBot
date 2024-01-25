@@ -55,7 +55,7 @@ async def gen_speech(channel_id, text_message, persona_data):
         narrator_enabled = True
 
     text_message = " " + text_message
-    text_message = text_message.replace(' *', f" *{persona_data['voice']} ").replace('* ', '*. ')
+    text_message = text_message.replace(' *', f" *{persona_data['name']} ").replace('* ', '*. ')
 
     payload = {
         "text_input": text_message,

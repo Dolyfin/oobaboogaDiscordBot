@@ -125,14 +125,19 @@ async def on_message(message):
         return
 
     for guild in cached_config_json:
+
+        author_name = message.author.name
+        if author_name is not None:
+            author_name = message.author.nick
+
         if message.channel.id != cached_config_json[guild]['chat_channel'] or not cached_config_json[guild]['chat_enabled'] or message.content.startswith(cached_config_json[guild]['chat_ignore_prefix']):
             continue
         await message.channel.trigger_typing()
-        print(f"[+] #{message.channel} {message.author.nick}: {message.content}")
+        print(f"[+] #{message.channel} {author_name}: {message.content}")
 
         persona_data = await config_handler.load_persona(cached_config_json[str(message.guild.id)]['persona'])
         # Generates the replies to the messages
-        response = await api_handler.request_text_gen(message.channel.id, message.author.nick, message.content, cached_config_json[guild]['persona'])
+        response = await api_handler.request_text_gen(message.channel.id, author_name, message.content, cached_config_json[guild]['persona'])
         await asyncio.sleep(int(cached_config_json[guild]['message_delay']))
         chunks = await chunkify(response)
 
@@ -166,7 +171,7 @@ async def on_message(message):
             await message.channel.trigger_typing()
             print(f"[?] Image generating...")
             await message.channel.trigger_typing()
-            prompt_output = await api_handler.request_sd_prompt(message.author.nick, message.content, cached_config_json[guild]['persona'], response)
+            prompt_output = await api_handler.request_sd_prompt(author_name, message.content, cached_config_json[guild]['persona'], response)
             result = await filter_word_detector(prompt_output)
             if result and cached_config_json[guild]['filter_enabled']:
                 print(f"<?> Filter detected word ({result}) in prompt.")
